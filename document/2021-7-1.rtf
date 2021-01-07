@@ -1,0 +1,178 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fmodern\fprq1 Lucida Console;}{\f2\fmodern\fprq1\fcharset0 Lucida Console;}}
+{\colortbl ;\red0\green0\blue255;\red0\green191\blue0;\red191\green0\blue191;\red191\green191\blue0;\red0\green191\blue191;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 ----------------- Git & Github ---------------\par
+\b\fs48 Getting Started with Git & Github\par
+New things learnt on 2021-06-7 added at last\par
+\par
+\b0\fs22 Learnt Git installation that's available in both CLI and GUI mode\par
+\b\fs28  Generate SSH Key for access\par
+\b0\fs22 ssh-keygen -t rsa -C "username or email" \par
+Example: ssh-keygen -t rsa -C "pantomathes"\par
+Copy your SSH key using below command \par
+cat ~/.ssh/id_rsa.pub \par
+And paste your key in SSH Key option available in settings of your github profile \par
+\b Configuration Command for accessing repo\par
+\b0 git config --global user.name "your username"\par
+git config --global user.email "your email"\par
+\b Downloading & Cloning Repo\par
+\b0 you can clone any repo using below command\par
+git clone "url"\par
+You can directly download ZIP file to your PC\par
+\b Important Commands that learnt today\par
+$ git remote -v \b0 it shows nickname of repo\par
+\b $ git fetch origin \b0  fetch latest updates \par
+\b $ git checkout -b "Reponame" origin/main (don't include quotation) \b0  It create a branch from master or main branch\par
+\b $ git status \b0 shows current status\par
+\par
+\b To add files in repository\b0\par
+git add filename.txt\par
+git commit -m "uploading file "\par
+git remote set-url origin 'repository url'\par
+git push origin master\par
+\par
+\b To delete files only from repository and not in local machine\b0\par
+git rm --cached filename.txt\par
+git commit -m "deleting file"\par
+git push origin master\par
+\par
+\b how to download/Restore file from repository\b0\par
+git checkout origin/master --filename.txt\par
+git restore "filename"\par
+\par
+\b Removing directory from repo\par
+\b0 git rm -r foldername\par
+git commit -m "comment"\par
+git push origin master\b\par
+Merging the branch with Main\par
+\b0 $ git checkout main \par
+$ git fetch origin \par
+$ git merge --no-ff origin/branch-name\par
+New message terminal prompts and you can close that.\par
+Now commit needed again\par
+\f1\fs18 $ git push\par
+Enumerating objects: 1, done.\par
+Counting objects: 100% (1/1), done.\par
+Writing objects: 100% (1/1), 382 bytes | 382.00 KiB/s, done.\par
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0\par
+To {{\field{\*\fldinst{HYPERLINK https://github.com/pantomathes/cybercomcreation.git }}{\fldrslt{https://github.com/pantomathes/cybercomcreation.git\ul0\cf0}}}}\f1\fs18\par
+   3a0da54..118628a  main -> main\par
+\par
+\b\f2\lang1033 Deleting Branch from REPO\par
+\cf2\b0\f1 rajpu@DESKTOP-K47NFIN \cf3 MINGW64 \cf4 /c/cybercomcreation\cf5  (main|MERGING)\par
+\cf0 $ git push origin --delete HEAD\par
+To {{\field{\*\fldinst{HYPERLINK https://github.com/pantomathes/cybercomcreation.git }}{\fldrslt{https://github.com/pantomathes/cybercomcreation.git\ul0\cf0}}}}\f1\fs18\par
+ - [deleted]         HEAD\par
+$ git push origin \f2 --delete Branch-Name\b\f1\lang9\par
+\f0\fs22 That's all i learnt today.\par
+\par
+\fs36 2021-06-01 addition\par
+\b0\fs24 Detailed information about HEAD operation and how HEAD pointer is operated and used.\par
+We can use HEAD to revert things back\par
+$git revert HEAD~commit_no\par
+for example $git revert HEAD~4\par
+\b Usage of Revert command with commit number\b0\par
+\fs22 $git log //for checking commit logs\par
+$git revert -m 1 "commit number"\par
+\b Also we can revert entire commits with merge operation\par
+Merge command for merging two branches\par
+\b0 switch to particular branch to be merged\b\par
+\b0 $git merge branchname branchname\par
+\par
+That's all for today.\par
+\b\fs36 2021-07-01 addition\par
+\b0\fs24 Today we saw how to resolve error.\par
+so firstly we need to check logs using git log command.\par
+now we need to check the number of unnecessary error that is causing error.\par
+git log -p -2 // Here this -2 is showing commit number\par
+output of above\par
+commit ca82a6dff817ec66f44342007202690a93763949\par
+Author: Scott Chacon <schacon@gee-mail.com>\par
+Date:   Mon Mar 17 21:52:11 2008 -0700\par
+diff --git a/Rakefile b/Rakefile\par
+index a874b73..8f94139 100644\par
+--- a/Rakefile\par
++++ b/Rakefile\par
+@@ -5,7 +5,7 @@ require 'rake/gempackagetask'\par
+ spec = Gem::Specification.new do |s|\par
+     s.platform  =   Gem::Platform::RUBY\par
+     s.name      =   "simplegit"\par
+-    s.version   =   "0.1.0"\par
++    s.version   =   "0.1.1"\par
+     s.author    =   "Scott Chacon"\par
+     s.email     =   "schacon@gee-mail.com"\par
+     s.summary   =   "A simple gem for using Git in Ruby code."\par
+This option displays the same information but with a diff directly following each entry. This is very helpful for code review or to quickly browse what happened during a series of commits that a collaborator has added.\par
+\b if you want to see some abbreviated stats for each commit, you can use the --stat option:\par
+\b0 $ git log --stat\par
+commit ca82a6dff817ec66f44342007202690a93763949\par
+Author: Scott Chacon <schacon@gee-mail.com>\par
+Date:   Mon Mar 17 21:52:11 2008 -0700\par
+\par
+    Change version number\par
+\par
+ Rakefile | 2 +-\par
+ 1 file changed, 1 insertion(+), 1 deletion(-)\par
+\par
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7\par
+Author: Scott Chacon <schacon@gee-mail.com>\par
+Date:   Sat Mar 15 16:40:33 2008 -0700\par
+\par
+git log -options //available options with log that helps in debugging\par
+-p\par
+\par
+Show the patch introduced with each commit.\par
+\par
+--stat\par
+\par
+Show statistics for files modified in each commit.\par
+\par
+--shortstat\par
+\par
+Display only the changed/insertions/deletions line from the --stat command.\par
+\par
+--name-only\par
+\par
+Show the list of files modified after the commit information.\par
+--name-status\par
+\par
+Show the list of files affected with added/modified/deleted information as well.\par
+\par
+--abbrev-commit\par
+\par
+Show only the first few characters of the SHA-1 checksum instead of all 40.\par
+\par
+--relative-date\par
+\par
+Display the date in a relative format (for example, \ldblquote 2 weeks ago\rdblquote ) instead of using the full date format.\par
+\par
+--graph\par
+\par
+Display an ASCII graph of the branch and merge history beside the log output.\par
+\par
+--pretty\par
+\par
+Show commits in an alternate format. Option values include oneline, short, full, fuller, and format (where you specify your own format).\par
+\par
+--oneline\par
+\par
+Shorthand for --pretty=oneline --abbrev-commit used together.\par
+\par
+\b\fs32 git-show - Show various types of objects\par
+\b0\fs22 $git show "commit_number" //it will show that commit\par
+$git show "commit_number" --name-only\b  \b0  //it will show that commit with only file name\par
+for example:- git show 5944ad2a8b5 --name-only\par
+now what if we want to save the detailed information of particular commit in different file to make it easy to debug\par
+$git show "commit_number" > filename.patch\par
+\b $\b0 git show 5944ad2a8b5 > commit.patch // it will generate a patch file which have detail commit information and you can open them in any IDE like sublime,atom and others.\par
+sometimes merge operation generates error if we have deleted file in history. so at that time try to revert that commit due to which error is getting generated.\par
+\par
+now what if branch and file name is same then how to access it.\par
+so use --filename option\par
+$git checkout branchname  //to access branch  \par
+$git checkout --filename //to access file in branch with same name\par
+\b if git generates conflict then it can only be solved manually using above debugging process.\par
+\fs32 That's all we learnt and applied today\fs22\par
+\par
+}
+ 
