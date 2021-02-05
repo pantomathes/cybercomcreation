@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script src="formvalidation.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div>
+        <h1>Registration Form</h1>
+        <form name="regform" method="POST" onsubmit="return validateform()">
+            <br><label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Enter First Name">
+            <span id="fnamealert" class="text-danger"></span></br>
+            <br><label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Enter Last Name">
+            <span id="lnamealert" class="text-danger"></span></br>
+            <br><label for="email-id">Email ID</label>
+            <input type="text" id="email-id" name="emailid" placeholder="Enter your Email">
+            <span id="emailalert" class="text-danger"></span></br>
+            <br><label>Gender:-</label>
+            <input type="radio" name="gender" id="gender" value="male">Male
+            <input type="radio" name="gender" id="gender" value="female">Female</br>
+            <br><label for="city">Current City</label>
+            <select id="city" name="city">
+                <option value="selectcity">Select City</option>
+                <option value="surat">Surat</option>
+                <option value="ahmedabad">Ahmedabad</option>
+                <option value="vadodara">Vadodara</option>
+            </select></br>
+            <br><input type="submit" value="Submit"></br>
+        </form>
+    </div>
+</body>
+</html>
