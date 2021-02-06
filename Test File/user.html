@@ -5,35 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User</title>
     <link rel="stylesheet" href="css/userstyle.css">
-    <script>
-        function addData(){
-            var array=[];
-            var name=document.getElementById("name").value;
-            var email=document.getElementById("email").value;
-            var pass=document.getElementById("pass").value;
-            var date=document.getElementById("dob").value;
-            var d=new Date(date);
-            var mon_diff=Date.now() - d.getTime();
-            var age_dt=new Date(mon_diff);
-            var year=age_dt.getUTCFullYear();
-            var age=Math.abs(year - 1970);
-            var person = {
-                name : name,
-                email : email,
-                password: pass,
-                birthdate : date,
-                age: age
-            };
-            if(localStorage.getItem('array'))
-            {
-                array = JSON.parse(localStorage.getItem('array'));
-            }
-
-            array.push(person);
-            localStorage.setItem("array", JSON.stringify(array));
-     
-        }
-    </script>
+   
 </head>
 <body>
     <div class="nav">
