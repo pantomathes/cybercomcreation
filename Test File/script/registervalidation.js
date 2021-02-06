@@ -8,11 +8,18 @@ function validateform(){
     var passpattern = /^(.){8,}$/;
     var state = document.forms["regform"]["state"];
 	var city = document.forms["regform"]["city"];
-	var terms = document.forms["regform"]["termscheck"];
+    var terms = document.forms["regform"]["termscheck"];
+    var admin = [];
+    var name;
+    var mail;
+    var pass;
+    var cred = {};
 
     if(namepattern.test(fnamecheck)){
 
         document.getElementById('fullnamealert').innerHTML = "Your First Name is Valid";
+        name = fnamecheck;
+        
     }
     else{
         document.getElementById('fullnamealert').innerHTML = "Your Entered First Name is InValid";
@@ -29,6 +36,7 @@ function validateform(){
     if(emailpattern.test(emailcheck)){
 
         document.getElementById('emailalert').innerHTML = "Your Email ID is Valid";
+        mail = emailcheck;
     }
     else{
         document.getElementById('emailalert').innerHTML = "Your Entered Email ID is InValid";
@@ -37,20 +45,16 @@ function validateform(){
     }
 
     if(passpattern.test(passwordcheck)){
+        pass = passwordcheck;
         if(confirmpasswordcheck != passwordcheck){
             document.getElementById('confirmpasswordalert').innerHTML = "Password must be same as above one";
             return false;
         }
-        else{
-            return true;
-        }
+        
         
     }
-    else{
-        document.getElementById('passwordalert').innerHTML = "Password must contain atleast 8 character";
-        //alert("Password must contain atleast 8 character");
-        return false;
-    }
+
+
 
     if (city.selectedIndex < 1) {
 		alert("city should not be empty");
@@ -67,7 +71,25 @@ function validateform(){
 		return false;
 	}
 
-    
+    var cred={
+        name: name,
+        mail:mail,
+        pass: pass
+    };
+
+    if(localStorage.getItem('admin') !=null){
+        alert("Admin already exists ");
+        return false;
+    }
+
+    if(localStorage.getItem('admin'))
+    {
+        admin = JSON.parse(localStorage.getItem('admin'));
+    }
+
+    admin.push(cred);
+    localStorage.setItem("admin", JSON.stringify(admin));
+    //document.write(localStorage);
 
 
 
