@@ -1,0 +1,38 @@
+div{
+    margin: 100px auto;
+    width: 35%;
+    padding: 30px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #d17813;
+    color: aliceblue;  
+}
+
+input[type=text],select
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000708;
+    box-sizing: border-box;
+    font-size: 14px;
+
+}
+
+input[type=submit]
+{
+    width: 100%;
+    background-color:  #af712a  ;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type=submit]:hover
+{
+    background-color:#2b3b3b;
+}
