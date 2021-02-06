@@ -95,3 +95,20 @@ function validateform(){
 
 
 }
+
+function check(){
+    var admin=localStorage.getItem('admin');
+    var items = JSON.parse(admin);
+    admin = items;
+    var array = localStorage.getItem('array');
+    var items1 = JSON.parse(array);
+    array = items1;
+    var email=document.getElementById('email').value;
+    var pass=document.getElementById('password').value
+    if(admin[0].mail === email && admin[0].pass === pass){
+        window.open("Dashboard.html");
+   
+    }
+
+    }
+

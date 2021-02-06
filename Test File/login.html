@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Web App</title>
 		<link rel="stylesheet" href="css/loginstyle.css" />
-		<script defer src="loginvalidation.js"></script>
+		<script src="script/registervalidation.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -16,6 +16,7 @@
 						<div class="form-element">
 							<input
 								type="email"
+								id = "email"
 								name="email"
 								placeholder="Email"
 							/>
@@ -23,16 +24,17 @@
 						<div class="form-element">
 							<input
 								type="password"
+								id="password"
 								name="password"
 								placeholder="Password"
 							/>
 						</div>
 						<div class="form-element">
-							<button type="submit" name="login">LOGIN</button>
+							<button type="submit" name="login" onsubmit="return check()">LOGIN</button>
 						</div>
 						<p>OR</p>
 						<div class="form-element">
-							<button type="submit" name="register">
+							<button  type ="submit" name="register" onclick="window.open('registration.html')">
 								REGISTER NOW
 							</button>
 						</div>
