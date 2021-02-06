@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Web App</title>
-		<link rel="stylesheet" href="css/loginstyle.css" />
-		<script src="script/registervalidation.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<h2>LOGIN</h2>
-			<div class="row">
-				<div class="form">
-					<form action="" method="post">
-						<div class="form-element">
-							<input
-								type="email"
-								id = "email"
-								name="email"
-								placeholder="Email"
-							/>
-						</div>
-						<div class="form-element">
-							<input
-								type="password"
-								id="password"
-								name="password"
-								placeholder="Password"
-							/>
-						</div>
-						<div class="form-element">
-							<button type="submit" name="login" onsubmit="return check()">LOGIN</button>
-						</div>
-						<p>OR</p>
-						<div class="form-element">
-							<button  type ="submit" name="register" onclick="window.open('registration.html')">
-								REGISTER NOW
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script>
+        function check(){
+            var admin=localStorage.getItem('admin');
+            var items = JSON.parse(admin);
+            admin = items;
+            var array = localStorage.getItem('array');
+            var items1 = JSON.parse(array);
+            array = items1;
+            var email=document.getElementById('email-id').value;
+            var pass=document.getElementById('password').value
+            if(admin[0].mail === email && admin[0].pass === pass){
+                window.open("dashboard.html");
+                //return true;
+            }
+            
+        }
+    </script>
+    <link rel="stylesheet" href="css/loginstyle.css">
+</head>
+<body>
+    <h1>Web App</h1>
+    <div>
+        <form name="login-form" method="POST" onclick="return check()">
+            
+            <div>
+                <h2>Login</h2>
+                <input type="text" id="email-id" name="email" placeholder="Enter your Email-ID">
+                <span id="emailid-alert" class="text-danger"></span></br>
+
+                <input type="text" id="password" name="password" placeholder="Enter your Password">
+                <span id="password-alert" class="text-danger"></span></br>
+
+                <br><input type="submit" value="Login"></br>
+                <h3>OR</h3>
+                <input type="button" value="Register Now" onclick="window.open('registration.html')">
+            </div>
+            
+        </form>
+    </div>
+</body>
 </html>
