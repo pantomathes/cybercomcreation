@@ -1,0 +1,18 @@
+.nav{
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 240px;
+    background-color: #e28d0c;
+    position: fixed;
+    overflow: hidden;
+    z-index: 1;
+    
+}
+.nav a{
+    padding: 6px 8px 6px 25px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

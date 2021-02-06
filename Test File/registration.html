@@ -12,14 +12,15 @@
     <div>
         <h1>Registration</h1>
         <form name="regform" method="POST" onsubmit="return validateform()">
+            <input type="text" id="full-name" name="fullname" placeholder="Enter tName" required>
             <input type="text" id="full-name" name="fullname" placeholder="Enter Name">
             <span id="fullnamealert" class="text-danger"></span></br>
             <input type="text" id="email-id" name="emailid" placeholder="Enter your Email">
             <span id="emailalert" class="text-danger"></span></br>
-            <input type="text" id="password" name="password" placeholder="Enter Password">
-            <span id="password-alert" class="text-danger"></span>
-            <input type="text" id="confirm-password" name="confirm-password" placeholder="Confirm Password">
-            <span id="confirm-password-alert" class="text-danger"></span>
+            <input type="text" id="password" name="pass-word" placeholder="Enter Password">
+            <span id="passwordalert" class="text-danger"></span>
+            <input type="text" id="confirmpassword" name="confirm-password" placeholder="Confirm Password">
+            <span id="confirmpasswordalert" class="text-danger"></span>
             <br><label for="city">Current City</label>
             <select id="city" name="city">
                 <option value="selectcity">Select City</option>

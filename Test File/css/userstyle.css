@@ -1,0 +1,43 @@
+.nav{
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 240px;
+    background-color: #f08d0c;
+    position: fixed;
+    overflow: hidden;
+    z-index: 1;
+    
+}
+.nav a{
+    padding: 6px 8px 6px 25px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+form{
+    padding-left:250px;
+}
+input{
+    width: 18%;
+    padding: 10px;
+}
+input[type=date]{
+    padding: 8px;
+}
+input[type=submit]{
+    margin-right: 50px;
+    align-self: center;
+    color: white;
+}
+table, tr, td{
+    padding: 15px;
+    border-collapse: collapse;
+    margin-left: 300px;
+}
+th{
+    background-color: black;
+    color: white;
+    padding: 15px;
+}

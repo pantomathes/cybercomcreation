@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="css/userstyle.css">
+    <script>
+        function addData(){
+            var array=[];
+            var name=document.getElementById("name").value;
+            var email=document.getElementById("email").value;
+            var pass=document.getElementById("pass").value;
+            var date=document.getElementById("dob").value;
+            var d=new Date(date);
+            var mon_diff=Date.now() - d.getTime();
+            var age_dt=new Date(mon_diff);
+            var year=age_dt.getUTCFullYear();
+            var age=Math.abs(year - 1970);
+            var person = {
+                name : name,
+                email : email,
+                password: pass,
+                birthdate : date,
+                age: age
+            };
+            if(localStorage.getItem('array'))
+            {
+                array = JSON.parse(localStorage.getItem('array'));
+            }
+
+            array.push(person);
+            localStorage.setItem("array", JSON.stringify(array));
+     
+        }
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <p style="padding-left: 25px; color: white;" id="para">Hello</p><br><br><br>
+        <a href="Dashboard.html">Dashboard</a><br>
+        <a href="User.html">Users</a><br>
+        <a href="">Login Session</a><br>
+        <a href="">Logout</a><br>
+    </div>
+    <h3 style="padding-left: 250px;">Add User</h3><br><br>
+    <form action="">
+        <input type="text" placeholder="Name" id="name">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="email" placeholder="Email" id="email">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="password" placeholder="Password" id="pass">&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" placeholder="Birthdate" id="dob">&nbsp;&nbsp;&nbsp;&nbsp;
+    </br></br>
+        <input type="submit" value="Add User" style="float: right; background-color: #fca311;" onclick="addData()">
+    </form>
+    <h3 style="padding-left: 270px; ">User List</h3><br>
+
+<script type="text/javascript" src="script/user.js">
+
+    
+</script>
+</body>
+</html>
