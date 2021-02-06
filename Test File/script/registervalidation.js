@@ -6,6 +6,9 @@ function validateform(){
     var emailpattern = /^[.a-zA-Z0-9]{3,}@[a-zA-z]{2,}[.][a-zA-z]{2,25}$/;
     var namepattern = /^([a-zA-Z\s]{3,})$/;
     var passpattern = /^(.){8,}$/;
+    var state = document.forms["regform"]["state"];
+	var city = document.forms["regform"]["city"];
+	var terms = document.forms["regform"]["termscheck"];
 
     if(namepattern.test(fnamecheck)){
 
@@ -48,6 +51,21 @@ function validateform(){
         //alert("Password must contain atleast 8 character");
         return false;
     }
+
+    if (city.selectedIndex < 1) {
+		alert("city should not be empty");
+		city.focus();
+		return false;
+	}
+	if (state.selectedIndex < 1) {
+		alert("state should not be empty");
+		state.focus();
+		return false;
+	}
+	if (!terms.checked) {
+		alert("Terms and Condition should be checked!");
+		return false;
+	}
 
     
 

@@ -22,7 +22,7 @@ var array = localStorage.getItem('array');
                     document.write('<td>'+array[k].password+'</td>');
                     document.write('<td>'+ array[k].birthdate + '</td>' );
                     document.write('<td>'+array[k].age);
-                    document.write('<td><a href="">edit</a></td><td><a onclick="deleteItem()">Delete</a></td>');
+                    document.write('<td><a href="">edit</a></td><td><a onclick= "deleteItem()">Delete</a></td>');
 					document.write('</tr>');
 				}
 			}
