@@ -1,0 +1,35 @@
+Users Table
+    1. user-id 
+    2. user-prefix
+    2. user-firstName
+    3. user-lastName
+    4. user-email
+    5. user-mobileNumber
+    6. user-password
+    7. user-confirm_password
+    8. user-information
+    9. user-lastLOginAt
+    10. user-createdAt
+    11. user-UpdatedAt
+
+
+blog table
+    1. blog-id
+    2. blog-parentcategoryId
+    3. blog-title
+    4. blog-metaTitle
+    5. blog-url
+    6. blog-content
+    7. blog-createdAt
+    8. blog-UpdatedAt
+
+blog category table
+    category-id
+    category-User Id, 
+    category-Title, 
+    category-Url, 
+    category-Content, 
+    category-Image, 
+    category-Published At, 
+    category-Created At, 
+    category-Updated At
